@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 import urlManOk from "./../../assets/images/man-ok.svg";
+import urlBannerThanks from "./../../assets/images/banner-thanks.svg";
 import urlLogo from "./../../assets/images/logo.svg";
 import "./../../assets/styles/thanks.sass";
 
@@ -14,6 +15,12 @@ export default function Thanks() {
 
   return (
     <main className="main-thanks">
+      <header className="header-thanks-mobile">
+        <img className="" src={urlLogo} alt="Rimac" />
+      </header>
+      <div className="banner-thanks">
+        <img className="" src={urlBannerThanks} alt="Rimac" />
+      </div>
       <section className="separator-thanks-section">
         <div className="mt-20 ml-30-percent">
           <img className="" src={urlLogo} alt="Rimac" />

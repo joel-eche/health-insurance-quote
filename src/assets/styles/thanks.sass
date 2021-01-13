@@ -5,6 +5,20 @@
   grid-template-columns: 1fr 2fr
   min-height: 100vh
 
+  .header-thanks-mobile
+    width: 100%
+    display: none
+    padding-top: 30px
+    padding-left: 10%
+    background-color: $primary
+
+  .banner-thanks
+    display: none
+    width: 100%
+
+    img
+      width: 100%
+
 .separator-thanks-section
   height: 90vh
   min-height: 480px
@@ -22,3 +36,28 @@
 
 .man-ok
   max-width: 100%
+
+@media (max-width: 860px)
+
+  .main-thanks
+    display: flex
+    flex-wrap: wrap
+
+    .header-thanks-mobile
+      display: flex
+
+    .banner-thanks
+      display: block
+
+  .separator-thanks-section
+    display: none
+
+  .detail-thanks-section
+    div
+      width: 80%
+
+    .man-ok
+      display: none
+
+    .btn
+      width: 100%
