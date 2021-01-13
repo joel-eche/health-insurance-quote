@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap)
+
+@import './constants.sass'
+
+*, *::before, *::after
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body, button, input
+  font-family: 'Lato', sans-serif
+  color: $gray
+  max-width: 100vw
+
+input
+  font-size: 16px
+
+ul
+  list-style: none
+
+.flex
+  display: flex
+
+.align-center
+  align-items: center
+
+.justify-center
+  justify-content: center
+
+.justify-between
+  justify-content: space-between
+
+.justify-end
+  justify-content: flex-end
+
+.light
+  font-weight: 300
+
+.color-primary
+  color: $primary
+
+.color-gray
+  color: $gray
+
+.color-gray-medium
+  color: $gray-medium !important
+
+.color-gray-light
+  color: $gray-light
+
+.btn, .btn-disabled, .btn-white
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 56px
+  padding: 0 30px
+  border: none
+  border-radius: 10px
+  font-weight: bold
+  font-size: 14px
+  cursor: pointer
+
+.btn
+  color: $white
+  background-color: $primary
+
+.btn-disabled
+  color: $gray-medium
+  background-color: $gray-light
+
+.btn-white
+  color: $primary-light
+  background-color: $white
+
+.mb-10
+  margin-bottom: 10px
+
+.mb-15
+  margin-bottom: 15px
+
+.mb-16
+  margin-bottom: 16px
+
+.mb-20
+  margin-bottom: 20px
+
+.mb-35
+  margin-bottom: 35px
+
+.mt-16
+  margin-top: 16px
+
+.mt-20
+  margin-top: 20px
+
+.mt-40
+  margin-top: 20px
+
+.ml-8
+  margin-left: 8px
+
+.ml-30-neg
+  margin-left: -30px
+
+.ml-30-percent
+  margin-left: 30%
+
+.pl-10
+  padding-left: 10px
+
+.pl-15
+  padding-left: 15px
+
+.pl-20
+  padding-left: 20px
+
+.pb-20
+  padding-bottom: 20px
+
+.py-20
+  padding: 20px 0
+
+.mw-100
+  min-width: 100px !important
+
+.grow-1
+  flex-grow: 1
+
+.font-10
+  font-size: 10px
+
+.font-11
+  font-size: 11px
+
+.font-12
+  font-size: 12px
+
+.border-bottom-gray-light
+  border-bottom: 1px solid $gray-light
+
+.conditions
+  font-size: 10px
+
+.tag
+  padding: 5px
+  background-color: $green
+  border-radius: 20px
+  font-size: 10px
+  color: $white
+
+.w-100p
+  width: 100%
+
+.cursor-pointer
+  cursor: pointer
+
+.underlined
+  text-decoration: underline $gray
