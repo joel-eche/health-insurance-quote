@@ -13,13 +13,21 @@
   background-position: right 50%, left center
   background-repeat: no-repeat, no-repeat
 
+.header-mobile
+  height: 56px
+  width: 100%
+  display: none
+  align-items: center
+  justify-content: center
+  background-color: $primary
+
 .form-choosing-section
   grid-column-start: 2
   padding: 10% 0
   display: flex
   justify-content: center
 
-.insurance-form 
+.insurance-form
   width: 50%
 
 // radiobutton
@@ -154,3 +162,31 @@
     .unavailable
       text-decoration: line-through
       color: $gray-medium
+
+@media (max-width: 860px)
+  .header-mobile
+    display: flex
+
+  .main-choosing
+    display: flex
+    flex-wrap: wrap
+
+  .separator-choosing-section
+    display: none
+
+  .form-choosing-section
+    display: flex
+    width: 100%
+    padding: 10%
+
+  .insurance-form
+    width: 100%
+
+    .choosing-submit-section
+      flex-direction: column
+
+    .btn
+      width: 100%
+
+    .btn-disabled
+      width: 100%

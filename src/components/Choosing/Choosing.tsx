@@ -33,7 +33,7 @@ export default function Choosing() {
       const newPerson = new Person();
       const params = location.state?.person || newPerson;
       const data = await getPerson();
-      
+
       if (
         params.identifier === data.numDocumento &&
         params.birthDate === formatDashDate(data.fecNacimiento)
@@ -72,6 +72,9 @@ export default function Choosing() {
         <p>Loading...</p>
       ) : (
         <main className="main-choosing">
+          <header className="header-mobile">
+            <img className="" src={urlLogo} alt="Rimac" />
+          </header>
           <section className="separator-choosing-section">
             <div className="mt-20 ml-30-percent">
               <img className="" src={urlLogo} alt="Rimac" />

@@ -433,7 +433,7 @@ export default function InsuranceDataForm({ person }: InsuranceFormValues) {
                   <span>Servicios brindados</span>
                   <ChevronDown className="color-primary" />
                 </div>
-                <div className="flex justify-end">
+                <div className="flex justify-end choosing-submit-section">
                   <button
                     type="button"
                     className="btn-white font-11 border-bottom-gray-light"
