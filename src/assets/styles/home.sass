@@ -18,6 +18,9 @@
   background-position: right 75%, left center
   background-repeat: no-repeat, no-repeat
 
+  &__info
+    padding-top: 0 !important
+
   h1
     font-size: 35px
     margin-bottom: 20px
@@ -43,6 +46,9 @@
 
     span
       color: $primary-light
+  
+  &__info__services--small
+    display: none
 
 .form-section
   grid-column-start: 2
@@ -96,3 +102,51 @@ input[type=checkbox]
   -webkit-transform: rotate(45deg)
   -ms-transform: rotate(45deg)
   transform: rotate(45deg)
+
+.back-icon
+  margin-right: 10px
+  cursor: pointer
+
+.next-icon
+  margin-left: 10px
+  cursor: pointer
+
+@media (max-width: 860px)
+  .main-home
+    display: flex
+    flex-wrap: wrap
+
+  .hero-section, .form-section
+    width: 100%
+
+  .form-section
+    padding: 10%
+
+@media (max-width: 505px)
+  .main-home
+    display: flex
+    flex-wrap: wrap
+
+  .hero-section
+    background-image: url(./../images/family.svg), url(./../images/base-small.png)
+    background-size: 45%, 100% 100%
+    background-position: 110% 75%, left center
+
+    &__copyright
+      display: none
+
+    &__info__title
+      font-size: 24px
+
+    &__info__services--large
+      display: none
+
+    &__info__services--small
+      display: block
+      width: 50%
+
+  .form-section
+    padding: 10%
+  
+  .btn
+    width: 100%
