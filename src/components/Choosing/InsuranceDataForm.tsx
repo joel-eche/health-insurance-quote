@@ -297,7 +297,7 @@ export default function InsuranceDataForm({ person }: InsuranceFormValues) {
                     <div className="flex align-center">
                       <ul className="relatives grow-1">
                         {relatives.map((relative, index) => (
-                          <li className="flex align-center">
+                          <li key={index} className="flex align-center">
                             <div className="flex align-center grow-1 pl-15">
                               <span className="mw-100">
                                 {relative.relationship}
@@ -364,37 +364,35 @@ export default function InsuranceDataForm({ person }: InsuranceFormValues) {
                 <div role="group" aria-labelledby="plan" className="plans">
                   {PLANS.map((plan) => {
                     return (
-                      <>
-                        <label
-                          key={plan.name}
-                          className={
-                            plan.name === formik.values.plan
-                              ? "checkbox-plan--active"
-                              : "checkbox-plan"
-                          }
-                        >
-                          <Field type="radio" name="plan" value={plan.name} />
-                          <div className="checkbox-plan__description">
-                            <div>
-                              <span className="font-11">{plan.text}</span>
-                            </div>
-                            <div>
-                              <span className="font-10">s/ </span>
-                              <span>{plan.price}</span>
-                            </div>
-                            <div>
-                              <span className="font-11">mensual</span>
-                            </div>
+                      <label
+                        key={plan.name}
+                        className={
+                          plan.name === formik.values.plan
+                            ? "checkbox-plan--active"
+                            : "checkbox-plan"
+                        }
+                      >
+                        <Field type="radio" name="plan" value={plan.name} />
+                        <div className="checkbox-plan__description">
+                          <div>
+                            <span className="font-11">{plan.text}</span>
                           </div>
-                          {plan.name === formik.values.plan ? (
-                            <img
-                              className="check-icon"
-                              src={urlIconCorrect}
-                              alt="check"
-                            />
-                          ) : null}
-                        </label>
-                      </>
+                          <div>
+                            <span className="font-10">s/ </span>
+                            <span>{plan.price}</span>
+                          </div>
+                          <div>
+                            <span className="font-11">mensual</span>
+                          </div>
+                        </div>
+                        {plan.name === formik.values.plan ? (
+                          <img
+                            className="check-icon"
+                            src={urlIconCorrect}
+                            alt="check"
+                          />
+                        ) : null}
+                      </label>
                     );
                   })}
                 </div>
@@ -402,6 +400,7 @@ export default function InsuranceDataForm({ person }: InsuranceFormValues) {
                   {PLANS.map((plan) => {
                     return plan.name === formik.values.plan ? (
                       <CardBenefits
+                        key={plan.name}
                         name=""
                         text={plan.text}
                         maxCovered={plan.maxCovered}

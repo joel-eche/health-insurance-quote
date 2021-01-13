@@ -116,7 +116,9 @@ const SelectWithTextInput = ({
           component="select"
         >
           {options.map((currentOption) => (
-            <option value={currentOption.value}>{currentOption.text}</option>
+            <option value={currentOption.value} key={currentOption.value}>
+              {currentOption.text}
+            </option>
           ))}
         </Field>
         <div className="form-container-group__input--right">
@@ -167,7 +169,7 @@ const RadioButtonGroupInput = ({
       <div role="group" aria-labelledby={name} className="mt-20">
         <p className="mb-20">{title}</p>
         {options.map((option) => (
-          <label className="radiobutton mb-15">
+          <label className="radiobutton mb-15" key={option.value}>
             {option.text}
             <Field type="radio" name={name} value={option.value} />
             <span className="checkmark"></span>
@@ -200,7 +202,9 @@ const SelectWithDateInput = ({
           component="select"
         >
           {options.map((currentOption) => (
-            <option value={currentOption.value}>{currentOption.text}</option>
+            <option value={currentOption.value} key={currentOption.value}>
+              {currentOption.text}
+            </option>
           ))}
         </Field>
         <div className="form-container-group__input--right">
