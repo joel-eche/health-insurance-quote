@@ -84,8 +84,17 @@ const PrimaryForm = () => {
                 </span>
               </span>
             </CheckboxInput>
-
-            <button className="btn mt-40" type="submit">
+            <button
+              className={`${
+                formik.isValid && formik.values.identifier.trim() !== ""
+                  ? "btn"
+                  : "btn-disabled"
+              } mt-40`}
+              type="submit"
+              disabled={
+                !formik.isValid || formik.values.identifier.trim() === ""
+              }
+            >
               COMENCEMOS
             </button>
           </Form>
