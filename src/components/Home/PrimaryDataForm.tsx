@@ -20,7 +20,7 @@ const PrimaryForm = () => {
       initialValues={new Person()}
       validationSchema={primaryDataFormValidator}
       onSubmit={(values: Person, { setSubmitting }: FormikHelpers<Person>) => {
-        history.push("/choosing");
+        history.push({ pathname: "/choosing", state: { person: values } });
       }}
     >
       {(formik) => {

@@ -16,4 +16,10 @@ const insuranceFormValidator = Yup.object({
   plan: Yup.string().required("Campo requerido"),
 });
 
-export { insuranceFormValidator };
+const insuranceFormValidatorNewUser = Yup.object({
+  name: Yup.string().required("Campo requerido"),
+  insured: Yup.string().required("Campo requerido"),
+  plan: Yup.string().required("Campo requerido"),
+});
+
+export { insuranceFormValidator, insuranceFormValidatorNewUser };

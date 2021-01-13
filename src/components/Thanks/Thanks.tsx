@@ -19,22 +19,22 @@ export default function Thanks() {
           <img className="" src={urlLogo} alt="Rimac" />
         </div>
       </section>
-      <section className="detail-thanks-section">
-        <div className="w-100p">
-          <img className="check-icon" src={urlManOk} alt="check" />
+      <section className="detail-thanks-section w-100p">
+        <div className="w-50p">
+          <img className="man-ok" src={urlManOk} alt="check" />
           <h2 className="light">
             Revisa nuestros<br></br>
             <strong className="color-primary">servicios y exclusiones</strong>
           </h2>
         </div>
-        <div className="py-20 w-100p">
+        <div className="py-20 w-50p">
           <span className="font-12">
             Queremos conocer mejor la salud de los asegurados. Un asesor{" "}
             <strong>se pondrá en contacto</strong> contigo en las siguientes{" "}
             <strong>48 horas.</strong>
           </span>
         </div>
-        <div className="flex justify-end w-100p">
+        <div className="flex justify-end w-50p">
           <button type="submit" className="btn font-11" onClick={goIndexPage}>
             IR A SALUD
           </button>

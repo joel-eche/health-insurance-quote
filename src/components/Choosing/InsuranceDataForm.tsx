@@ -7,7 +7,10 @@ import { ChevronRight, ChevronDown, Heart } from "heroicons-react";
 import urlIconBackRounded from "./../../assets/images/icon-back-rounded.svg";
 import urlMan from "./../../assets/images/man.svg";
 import urlIconCorrect from "./../../assets/images/icon-correct.svg";
-import { insuranceFormValidator } from "./insuranceFormValidator";
+import {
+  insuranceFormValidator,
+  insuranceFormValidatorNewUser,
+} from "./insuranceFormValidator";
 import {
   DateInput,
   RadioButtonGroupInput,
@@ -129,7 +132,9 @@ export default function InsuranceDataForm({ person }: InsuranceFormValues) {
   return (
     <Formik
       initialValues={person}
-      validationSchema={insuranceFormValidator}
+      validationSchema={
+        person.name ? insuranceFormValidator : insuranceFormValidatorNewUser
+      }
       onSubmit={(values: Person, { setSubmitting }: FormikHelpers<Person>) => {
         history.push("/choosing");
       }}
@@ -173,21 +178,32 @@ export default function InsuranceDataForm({ person }: InsuranceFormValues) {
                 </div>
                 <h2 className="light mb-10">
                   <span>Hola, </span>
-                  <span className="light color-primary">Maria</span>
+                  <span className="light color-primary">
+                    {person.name || "¡empecemos!"}
+                  </span>
                 </h2>
                 <p className="light mb-35">
-                  Valida que los datos sean correctos
+                  {person.name
+                    ? "Valida que los datos sean correctos"
+                    : "Cuéntanos un poco sobre ti"}
                 </p>
-                <h3 className="light mb-20">Datos personales del titular</h3>
-                <SelectWithTextInput
-                  selectName="kindIdentifier"
-                  options={[{ value: "dni", text: "DNI" }]}
-                  textName="identifier"
-                  textLabel="Nro. de documento"
-                  textPlaceholder="87654321"
-                  showError={!formik.isValid}
-                  errorMessage={formik.errors.identifier || ""}
-                />
+                <h3 className="light mb-20">
+                  {person.name
+                    ? "Datos personales del titular"
+                    : "Ingresa tu nombre"}
+                </h3>
+
+                {person.name ? (
+                  <SelectWithTextInput
+                    selectName="kindIdentifier"
+                    options={[{ value: "dni", text: "DNI" }]}
+                    textName="identifier"
+                    textLabel="Nro. de documento"
+                    textPlaceholder="87654321"
+                    showError={!formik.isValid}
+                    errorMessage={formik.errors.identifier || ""}
+                  />
+                ) : null}
 
                 <TextInput
                   name="name"
@@ -197,40 +213,44 @@ export default function InsuranceDataForm({ person }: InsuranceFormValues) {
                   errorMessage={formik.errors.name || ""}
                 />
 
-                <TextInput
-                  name="faherLastname"
-                  label="Apellido paterno"
-                  placeholder="Apellido paterno"
-                  showError={!formik.isValid}
-                  errorMessage={formik.errors.faherLastname || ""}
-                />
+                {person.name ? (
+                  <>
+                    <TextInput
+                      name="faherLastname"
+                      label="Apellido paterno"
+                      placeholder="Apellido paterno"
+                      showError={!formik.isValid}
+                      errorMessage={formik.errors.faherLastname || ""}
+                    />
 
-                <TextInput
-                  name="motherLastname"
-                  label="Apellido Materno"
-                  placeholder="Apellido Materno"
-                  showError={!formik.isValid}
-                  errorMessage={formik.errors.motherLastname || ""}
-                />
+                    <TextInput
+                      name="motherLastname"
+                      label="Apellido Materno"
+                      placeholder="Apellido Materno"
+                      showError={!formik.isValid}
+                      errorMessage={formik.errors.motherLastname || ""}
+                    />
 
-                <DateInput
-                  name="birthDate"
-                  label="Fecha de nacimiento"
-                  placeholder="Fecha de nacimiento"
-                  showError={!formik.isValid}
-                  errorMessage={formik.errors.birthDate || ""}
-                />
+                    <DateInput
+                      name="birthDate"
+                      label="Fecha de nacimiento"
+                      placeholder="Fecha de nacimiento"
+                      showError={!formik.isValid}
+                      errorMessage={formik.errors.birthDate || ""}
+                    />
 
-                <RadioButtonGroupInput
-                  name="gender"
-                  title="Género"
-                  options={[
-                    { value: "M", text: "Masculino" },
-                    { value: "F", text: "Femenino" },
-                  ]}
-                  showError={!formik.isValid}
-                  errorMessage={formik.errors.gender || ""}
-                />
+                    <RadioButtonGroupInput
+                      name="gender"
+                      title="Género"
+                      options={[
+                        { value: "M", text: "Masculino" },
+                        { value: "F", text: "Femenino" },
+                      ]}
+                      showError={!formik.isValid}
+                      errorMessage={formik.errors.gender || ""}
+                    />
+                  </>
+                ) : null}
 
                 <RadioButtonGroupInput
                   name="insured"
