@@ -1,11 +1,13 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import InsuranceDataForm from "./InsuranceDataForm";
 
+import Loader from "react-loader-spinner";
+import { useHistory, useLocation } from "react-router-dom";
+
 import urlLogo from "./../../assets/images/logo.svg";
 import "./../../assets/styles/choosing.sass";
 import { Person } from "../../classes/Person";
 import { getPerson } from "../../services/api.services";
-import { useHistory, useLocation } from "react-router-dom";
 
 interface locationValues {
   person: Person;
@@ -26,7 +28,7 @@ export default function Choosing() {
     if (!history.location.state) {
       history.push("/");
     }
-  }, []);
+  }, [history]);
 
   useEffect(() => {
     const getInitialPersonData = async () => {
@@ -58,6 +60,7 @@ export default function Choosing() {
       setPerson(newPerson);
     };
     getInitialPersonData();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -69,7 +72,9 @@ export default function Choosing() {
   return (
     <>
       {isLoading ? (
-        <p>Loading...</p>
+        <div className="w-100vh w-100vh flex align-center justify-center">
+          <Loader type="Oval" color="#EF3340" height={100} width={100} />
+        </div>
       ) : (
         <main className="main-choosing">
           <header className="header-mobile">
