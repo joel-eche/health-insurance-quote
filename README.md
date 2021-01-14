@@ -21,3 +21,13 @@ Aplicación simple que simula un cotizador de seguros de salud, realizada utiliz
 ### Proyecto deployado
 
 Para acceder al proyecto deployado, puede hacerlo desde la dirección: https://health-insurance-quote-joel-eche.netlify.app/
+
+### Capturas de pantalla
+
+![](https://raw.githubusercontent.com/joel-eche/health-insurance-quote/master/src/assets/images/app1.png)
+![](https://raw.githubusercontent.com/joel-eche/health-insurance-quote/master/src/assets/images/app2.png)
+![](https://raw.githubusercontent.com/joel-eche/health-insurance-quote/master/src/assets/images/app3.png)
+![](https://raw.githubusercontent.com/joel-eche/health-insurance-quote/master/src/assets/images/app4.png)
+![](https://raw.githubusercontent.com/joel-eche/health-insurance-quote/master/src/assets/images/app5.png)
+![](https://raw.githubusercontent.com/joel-eche/health-insurance-quote/master/src/assets/images/app6.png)
+![](https://raw.githubusercontent.com/joel-eche/health-insurance-quote/master/src/assets/images/app7.png)
