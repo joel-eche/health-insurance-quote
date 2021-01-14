@@ -9,6 +9,7 @@ Aplicación simple que simula un cotizador de seguros de salud, realizada utiliz
 - Aplicación web maquetada de acuerdo al diseño
 - Se consideró validación de formularios
 - Implementación del flujo completo
+- Responsive design
 
 ### Cómo correr el proyecto
 
